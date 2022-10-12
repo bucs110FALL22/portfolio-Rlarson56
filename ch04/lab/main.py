@@ -47,7 +47,7 @@ pygame.draw.rect(color, pygame.rect(xcoor,ycoor)
 
 
 
-if bpoints>rpoints:
+if bpoints > rpoints:
  print(choiceb, "WINS")
 else:
 print(choicer, "WINS")

@@ -41,7 +41,8 @@ leonardo.goto(-100,-20)
 michelangelo.down()
 leonardo.down()
 loop=(1,2,3,4,5,6,7,8,9,10)
-for(i) in loop:
+
+for [i] in loop:
   m_move = random.randrange(1,10)
   l_move = random.randrange(1,10)
   michelangelo.forward(m_move)
