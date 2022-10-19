@@ -15,10 +15,9 @@ def percentage_to_letter(score):
      grade = "d"
   elif score < 60:
      grade = "f"
-  print("Your grade is a",grade)
 
 def is_passing(grade):
- if grade == "a" or "b" or "c":
+ if grade == "a" or grade == "b" or grade == "c":
    print("You're passing")
  elif grade == "d" or "f":
     print("You're not passing")
