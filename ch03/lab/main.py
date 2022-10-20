@@ -1,3 +1,5 @@
+##cd ch03/lab
+## python3 main.py
 import turtle #1. import modules
 import random
 import time
@@ -16,14 +18,16 @@ michelangelo.shape('turtle')
 leonardo.shape('turtle')
 
 # 4. Pick up the pen so we don’t get lines
-michelangelo.up()
-leonardo.up()
-michelangelo.goto(-100,20)
-leonardo.goto(-100,-20)
+def reset():
+  turtle.clear()
+  michelangelo.up()
+  leonardo.up()
+  michelangelo.goto(0,10)
+  leonardo.goto(0,0)
 ## 5. Your PART A code goes here
 m_move = random.randrange(1,100)
 l_move = random.randrange(1,100)
-
+reset()
 michelangelo.down()
 leonardo.down()
 
@@ -32,17 +36,13 @@ leonardo.forward(l_move)
 
 time.sleep(5)
 
-turtle.clear()
-michelangelo.up()
-leonardo.up()
-michelangelo.goto(-100,20)
-leonardo.goto(-100,-20)
+reset()
 
 michelangelo.down()
 leonardo.down()
 loop=(1,2,3,4,5,6,7,8,9,10)
 
-for [i] in loop:
+for i in loop:
   m_move = random.randrange(1,10)
   l_move = random.randrange(1,10)
   michelangelo.forward(m_move)
@@ -51,123 +51,116 @@ for [i] in loop:
 
 # PART B - complete part B here
 pygame.init()
-window = pygame.display.set_mode()
+
 
 #triangle
-coords=[10,0]
-num_sides=(3)
-num_sides=int(num_sides)
-side_length=(15)
-side_length=int(side_length)
-offset=(5)
-offset=int(offset)
+coords=[]
+num_sides= 3
+side_length= 15
+offset= 5
 
-loop2=(1,2,3,4,5,6,7,8,9,10)
-for(i) in loop2:
-  theta = (2.0 * math.pi * loop2)/num_sides
+loop2=(1,2,3)
+
+
+
+for i in loop2:
+  theta = (2.0 * math.pi * i in loop)/num_sides
   x = side_length * math.cos(theta) + offset
   y = side_length * math.sin(theta) + offset
-
-
-xny=(x,y)
-newlist=coords+xny
+  coords.append((x,y))
+pygame.display.polygon(window,red,coords)
 pygame.display.flip()
-pygame.time.wait
-window.fill(black)
 
 
+reset()
+pygame.time.wait(40)
 
 #square
-coords=[20,0]
-num_sides=(4)
-num_sides=int(num_sides)
-side_length=(15)
-side_length=int(side_length)
-offset=(5)
-offset=int(offset)
+coords=[]
+num_sides= 4
+side_length= 15
+offset= 6
+
+loop2=(1,2,3,4)
 
 
-for(i) in loop2:
-  theta = (2.0 * math.pi * loop2)/num_sides
+
+for i in loop2:
+  theta = (2.0 * math.pi * i)/num_sides
   x = side_length * math.cos(theta) + offset
   y = side_length * math.sin(theta) + offset
+  coords.append((x,y))
 
-
-xny=(x,y)
-newlist=coords+xny
 pygame.display.flip()
-pygame.time.wait
-window.fill(black)
 
+
+reset()
+pygame.time.wait(40)
 
 #hexagon
-coords=[30,0]
-num_sides=(6)
-num_sides=int(num_sides)
-side_length=(15)
-side_length=int(side_length)
-offset=(5)
-offset=int(offset)
+coords=[]
+num_sides= 6
+side_length= 15
+offset= 7
+
+loop2=(1,2,3,4,5,6)
 
 
-for(i) in loop2:
-  theta = (2.0 * math.pi * loop2)/num_sides
+for i in loop2:
+  theta = (2.0 * math.pi * i)/num_sides
   x = side_length * math.cos(theta) + offset
   y = side_length * math.sin(theta) + offset
+  coords.append((x,y))
 
-
-xny=(x,y)
-newlist=coords+xny
 pygame.display.flip()
-pygame.time.wait
-window.fill(black)
 
+
+reset()
+pygame.time.wait(40)
 
 #nonagon
-coords=[10,-10]
-num_sides=(9)
-num_sides=int(num_sides)
-side_length=(15)
-side_length=int(side_length)
-offset=(5)
-offset=int(offset)
+coords=[]
+num_sides= 9
+side_length= 15
+offset= 8
+
+loop2=(1,2,3,4,5,6,7,8,9)
 
 
-for(i) in loop2:
-  theta = (2.0 * math.pi * loop2)/num_sides
+
+for i in loop2:
+  theta = (2.0 * math.pi * i)/num_sides
   x = side_length * math.cos(theta) + offset
   y = side_length * math.sin(theta) + offset
-
-
-xny=(x,y)
-newlist=coords+xny
+  coords.append((x,y))
+pygame.display.polygon(window,red,coords)
 pygame.display.flip()
-pygame.time.wait
-window.fill(black)
 
+
+reset()
+pygame.time.wait(40)
 
 #circle
-coords=[10,-20]
-num_sides=(360)
-num_sides=int(num_sides)
-side_length=(15)
-side_length=int(side_length)
-offset=(5)
-offset=int(offset)
+coords=[]
+num_sides= 360
+side_length= 15
+offset= 8
+
+loop2=range(1,360)
 
 
-for(i) in loop2:
-  theta = (2.0 * math.pi * loop2)/num_sides
+
+for i in loop2:
+  theta = (2.0 * math.pi * i)/num_sides
   x = side_length * math.cos(theta) + offset
   y = side_length * math.sin(theta) + offset
-
-
-xny=(x,y)
-newlist=coords+xny
+  coords.append((x,y))
+pygame.display.polygon(window,red,coords)
 pygame.display.flip()
-pygame.time.wait
-window.fill(black)
 
 
+reset()
+pygame.time.wait(40)
 
-window.exitonclick()
+
+##need help displaying polygons
