@@ -1,12 +1,13 @@
 ## cd ch05/lab
 ## python3 main.py
 import pygame
+pygame.init()
 max_so_far = 0
 upper_limit = 20
 iters = { }
 start=range(2,upper_limit)
 font = pygame.font.Font(None,7)
-msg = font.render("Waddup", True/False, "black")
+msg = font.render("Waddup", True,False, "black")
 display = pygame.display.set_mode()
 new_display = pygame.transform.flip(display, False, True)
 pygame.init()
@@ -35,3 +36,4 @@ print(iters)
 
 pygame.draw.lines(display, "white", False, iters)
 display.blit(msg, 10,10)
+##add these points to a list
