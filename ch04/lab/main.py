@@ -48,9 +48,9 @@ pygame.draw.rect(color, pygame.rect(xcoor,ycoor)
 
 
 if bpoints > rpoints:
- print(choiceb, "WINS")
+  print(choiceb, "WINS")
 else:
-print(choicer, "WINS")
+  print(choicer, "WINS")
 
 
 distance_from_center = math.hypot(x1-x2, y1-y2)
